@@ -5,14 +5,13 @@
 
 using namespace std;
 
-typedef long long ll;
-ll solve(int L, vector<int> up, vector<int> dw)
+long long solve(int L, vector<int> up, vector<int> dw)
 {
   sort(up.begin(), up.end()); sort(dw.begin(), dw.end());
   up.erase(unique(up.begin(), up.end()), up.end());
   dw.erase(unique(dw.begin(), dw.end()), dw.end());
   const int n = up.size(), m = dw.size();
-  ll ret = 0;
+  long long ret = 0;
   for(int i=0; i<n; ++i) ret += L - abs(up[i]-L+1);
   for(int i=0; i<m; ++i) ret += L - abs(dw[i]);
   for(int i=0; i<n; ++i) {
